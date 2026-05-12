@@ -2,132 +2,168 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohamed Bilal Al-desouki | CS Student</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Bilal Al-desouki — Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <div class="noise-overlay"></div>
+    <!-- <div class="cursor-glow" id="cursorGlow"></div> -->
+
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">MB<span class="logo-dot">.</span></a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+        <div class="nav-brand">
+            <span class="brand-bracket">[</span>
+            <span class="brand-text">MB</span>
+            <span class="brand-bracket">]</span>
         </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <section class="hero" id="home">
-        <div class="hero-bg-blob blob-1"></div>
-        <div class="hero-bg-blob blob-2"></div>
-        <div class="hero-content reveal">
-            <span class="hero-eyebrow">Hello, I'm</span>
-            <h1 class="hero-name">Mohamed Bilal<br /><em>Al-desouki</em></h1>
-            <p class="hero-title">Computer Science Student</p>
-            <p class="hero-tagline">Passionate about building efficient solutions and clean code.</p>
+        <div class="hero-bg-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">Computer Science Student · Egypt</span>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h1 class="hero-name">
+                <span class="name-line" data-text="Mohamed Bilal">Mohamed Bilal</span>
+                <span class="name-line name-surname" data-text="Al-desouki">Al-desouki</span>
+            </h1>
+            <p class="hero-tagline">
+                <span class="mono">// </span>Building digital experiences with precision &amp; purpose
+            </p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
             </div>
+            <div class="hero-socials">
+                <a href="https://github.com/desoukkkii" target="_blank" rel="noopener noreferrer" class="social-link"
+                    aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/desoukkkiii" target="_blank" rel="noopener noreferrer"
+                    class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <a href="mailto:desouki.infosec@gmail.com" class="social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
+            </div>
         </div>
-        <div class="hero-scroll-hint">
-            <span>Scroll</span>
-            <i class="fa-solid fa-arrow-down"></i>
+        <div class="scroll-indicator">
+            <span class="scroll-text mono">scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">01 — About</span>
-                <h2 class="section-title">Who I Am</h2>
+            <div class="section-header">
+                <span class="section-num mono">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="about-grid reveal">
-                <div class="about-text">
-                    <p class="about-lead">I'm a Computer Science student with a deep love for writing clean, efficient,
-                        and thoughtful code.</p>
-                    <p>I believe great software is both functional and elegant. I'm always exploring new technologies,
-                        sharpening my problem-solving skills, and building projects that make a difference.</p>
-                    <p>When I'm not coding, I enjoy diving into algorithms, contributing to open-source, and
-                        collaborating with fellow developers.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-num">2+</span>
-                            <span class="stat-label">Years Coding</span>
+            <div class="about-grid">
+                <div class="about-text" data-animate="fade-left">
+                    <p class="about-lead">I'm <span class="gold-text">Mohamed Bilal Al-desouki</span>, a passionate
+                        Computer Science student based in <span class="gold-text">Egypt</span>.</p>
+                    <p>I build clean, functional, and visually compelling web experiences. Currently focused on
+                        strengthening my foundations in software development, data structures, algorithms, and web
+                        technologies.</p>
+                    <p>With a strong interest in <span class="highlight-red">cybersecurity</span> and <span
+                            class="highlight-red">full-stack development</span>, I constantly explore new technologies
+                        and push my boundaries as a developer.</p>
+                    <div class="about-links">
+                        <a href="https://github.com/desoukkkii" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm">GitHub Profile</a>
+                        <a href="https://desoukkkii.github.io/desouki-portfolio/" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-sm btn-gold">Live Portfolio</a>
+                    </div>
+                </div>
+                <div class="about-skills" data-animate="fade-right">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14.6 16.6l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">HTML5 / CSS3</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-num">10+</span>
-                            <span class="stat-label">Projects Built</span>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.627z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">JavaScript</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-num">∞</span>
-                            <span class="stat-label">Lines of Code</span>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M16.5 9.4l-9-5.19L3 7.5v9l7.5 4.33 7.5-4.33v-7.1zM12 19.44L5.5 15.72v-7.5L12 11.94l6.5-3.72v7.5L12 19.44z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">C++ / STL</span>
                         </div>
-                    </div>
-                </div>
-                <div class="about-card-wrap">
-                    <div class="about-card">
-                        <div class="about-card-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Clean Code</h3>
-                        <p>I write readable, maintainable code that stands the test of time.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h3>Problem Solver</h3>
-                        <p>I break complex challenges into elegant, efficient solutions.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
-                        <h3>Fast Learner</h3>
-                        <p>I adapt quickly to new tools, languages, and frameworks.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">02 — Skills</span>
-                <h2 class="section-title">My Toolbox</h2>
-            </div>
-            <div class="skills-grid reveal">
-                <div class="skill-group">
-                    <h3 class="skill-group-title"><i class="fa-solid fa-terminal"></i> Languages</h3>
-                    <div class="skill-badges">
-                        <span class="badge">C++</span>
-                        <span class="badge">Python</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="skill-group-title"><i class="fa-solid fa-wrench"></i> Tools & IDEs</h3>
-                    <div class="skill-badges">
-                        <span class="badge">VS Code</span>
-                        <span class="badge">Visual Studio</span>
-                        <span class="badge">CLion</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="skill-group-title"><i class="fa-brands fa-git-alt"></i> Version Control</h3>
-                    <div class="skill-badges">
-                        <span class="badge">Git</span>
-                        <span class="badge">GitHub</span>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">Algorithms</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">Cybersecurity</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">Git / GitHub</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,159 +172,241 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">03 — Projects</span>
-                <h2 class="section-title">What I've Built</h2>
+            <div class="section-header">
+                <span class="section-num mono">02.</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="projects-grid reveal">
-                <div class="project-card">
-                    <div class="project-num">01</div>
-                    <div class="project-body">
-                        <h3 class="project-title">Data Structures Library</h3>
-                        <p class="project-desc">A custom C++ implementation of essential data structures including
-                            linked lists, binary trees, hash maps, and graphs with comprehensive unit testing.</p>
+            <div class="projects-grid">
+
+                <div class="project-card" data-animate="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                                </svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/desoukkkii/desouki-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                                <a href="https://desoukkkii.github.io/desouki-portfolio/" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">desouki-portfolio</h3>
+                        <p class="project-desc">My personal developer portfolio website built with HTML, CSS, and
+                            JavaScript, featuring responsive design and smooth animations.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-animate="fade-up" data-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4m5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                                </svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/desoukkkii/cpp-practice" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">C++ Practice Library</h3>
+                        <p class="project-desc">A collection of C++ practice programs including data structures,
+                            algorithms, and problem-solving solutions.</p>
                         <div class="project-tags">
                             <span class="tag">C++</span>
-                            <span class="tag">Algorithms</span>
-                            <span class="tag">OOP</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mohamed-bilal" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-num">02</div>
-                    <div class="project-body">
-                        <h3 class="project-title">Student Grade Tracker</h3>
-                        <p class="project-desc">A Python application that manages student records, computes GPA, and
-                            generates performance reports with an intuitive CLI interface and CSV export.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">CLI</span>
-                            <span class="tag">CSV</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mohamed-bilal" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-num">03</div>
-                    <div class="project-body">
-                        <h3 class="project-title">Sorting Visualizer</h3>
-                        <p class="project-desc">An interactive visualizer built in Python that animates bubble sort,
-                            merge sort, and quicksort algorithms step-by-step for educational purposes.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Visualization</span>
+                            <span class="tag">STL</span>
                             <span class="tag">Algorithms</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mohamed-bilal" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-num">04</div>
-                    <div class="project-body">
-                        <h3 class="project-title">Mini Shell (Unix)</h3>
-                        <p class="project-desc">A lightweight Unix-like shell written in C++ supporting piping,
-                            redirection, built-in commands, and basic process management for OS course assignments.</p>
+
+                <div class="project-card project-card-soon" data-animate="fade-up" data-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                </svg>
+                            </div>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                        <h3 class="project-title">Coming Soon</h3>
+                        <p class="project-desc">More exciting projects are in development. Stay tuned!</p>
                         <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">Systems</span>
-                            <span class="tag">Unix</span>
+                            <span class="tag tag-tbd">TBD</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mohamed-bilal" target="_blank" class="project-link"><i
-                                class="fa-brands fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                </div>
+
+                <div class="project-card project-card-soon" data-animate="fade-up" data-delay="300">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                        <h3 class="project-title">Coming Soon</h3>
+                        <p class="project-desc">Future project showcasing advanced concepts and real-world applications.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-tbd">TBD</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">04 — Contact</span>
-                <h2 class="section-title">Let's Connect</h2>
+            <div class="section-header">
+                <span class="section-num mono">03.</span>
+                <h2 class="section-title">Contact</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="contact-grid reveal">
-                <div class="contact-info">
-                    <p class="contact-lead">Have a project in mind, want to collaborate, or just want to say hi? My
-                        inbox is always open.</p>
-                    <div class="contact-links">
-                        <a href="https://github.com/mohamed-bilal" target="_blank" class="contact-item">
-                            <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
-                            <div>
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-val">github.com/mohamed-bilal</span>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com/in/mohamed-bilal" target="_blank" class="contact-item">
-                            <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
-                            <div>
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-val">linkedin.com/in/mohamed-bilal</span>
-                            </div>
-                        </a>
-                        <a href="mailto:mohamed.bilal@example.com" class="contact-item">
-                            <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <div>
-                                <span class="contact-label">Email</span>
-                                <span class="contact-val">mohamed.bilal@example.com</span>
-                            </div>
-                        </a>
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-left">
+                    <h3 class="contact-heading">Let's Build Something Together</h3>
+                    <p class="contact-subtext">Have a project in mind, a collaboration idea, or just want to connect?
+                        I'm always open to new opportunities.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <a href="mailto:desouki.infosec@gmail.com">desouki.infosec@gmail.com</a>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>Egypt</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            <a href="https://github.com/desoukkkii" target="_blank"
+                                rel="noopener noreferrer">github.com/desoukkkii</a>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form" novalidate>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="off" />
-                        <span class="form-error" id="name-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
-                        <span class="form-error" id="email-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5"
-                            placeholder="Tell me about your project or idea..."></textarea>
-                        <span class="form-error" id="message-error"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fa-solid fa-paper-plane"></i> Send Message
-                    </button>
-                    <div class="form-success" id="form-success">
-                        <i class="fa-solid fa-circle-check"></i> Message sent! I'll get back to you soon.
-                    </div>
-                </form>
+                <div class="contact-form-wrapper" data-animate="fade-right">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form"
+                        novalidate>
+                        <input type="hidden" name="access_key" value="e05b31d5-119d-4999-ad84-2bea8b2927ea">
+                        <input type="hidden" name="subject" value="New message from your portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Contact">
+                        <input type="hidden" name="redirect" value="https://desoukkkii.github.io/desouki-portfolio/">
+                        <input type="checkbox" name="botcheck" style="display:none">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name"
+                                autocomplete="name">
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com"
+                                autocomplete="email">
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea"
+                                placeholder="Tell me about your project or idea..." rows="5"></textarea>
+                            <span class="form-error" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display:none">
+                                <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" stroke-dasharray="31.4" stroke-dashoffset="10" />
+                                </svg>
+                                Sending...
+                            </span>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+                            </svg>
+                            Message sent successfully! I'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container footer-inner">
-            <span class="footer-logo">MB<span class="logo-dot">.</span></span>
-            <p class="footer-copy">© <span id="footer-year"></span> Mohamed Bilal Al-desouki. Crafted with care.</p>
-            <div class="footer-socials">
-                <a href="https://github.com/mohamed-bilal" target="_blank" aria-label="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/mohamed-bilal" target="_blank" aria-label="LinkedIn"><i
-                        class="fa-brands fa-linkedin-in"></i></a>
-                <a href="mailto:mohamed.bilal@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="brand-bracket">[</span>
+                    <span class="brand-text">MB</span>
+                    <span class="brand-bracket">]</span>
+                    <span class="footer-name">Mohamed Bilal Al-desouki</span>
+                </div>
+                <p class="footer-copy mono">© 2025 · Built with passion in Egypt</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/desoukkkii" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/desoukkkiii" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:desouki.infosec@gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
