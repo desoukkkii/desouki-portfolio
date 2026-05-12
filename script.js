@@ -1,120 +1,219 @@
-document.getElementById('footer-year').textContent = new Date().getFullYear();
+(function () {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    // const cursorGlow = document.getElementById('cursorGlow');
+    const contactForm = document.getElementById('contactForm');
 
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+    // document.addEventListener('mousemove', function (e) {
+    //     if (cursorGlow) {
+    //         cursorGlow.style.left = e.clientX + 'px';
+    //         cursorGlow.style.top = e.clientY + 'px';
+    //     }
+    // });
 
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+    // var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // if (isMobile && cursorGlow) {
+    //     cursorGlow.style.display = 'none';
+    //     document.body.style.cursor = 'auto';
+    // }
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('open');
-});
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 30) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }, { passive: true });
 
-navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('open');
+    hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
     });
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (!target) return;
-        e.preventDefault();
-        const offset = document.getElementById('navbar').offsetHeight;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        });
     });
-});
 
-const revealElements = document.querySelectorAll('.reveal');
+    document.addEventListener('click', function (e) {
+        if (!navbar.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        }
+    });
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
+    var animatedEls = document.querySelectorAll('[data-animate]');
+
+    var observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -80px 0px',
+        threshold: 0.1
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
+                var el = entry.target;
+                var delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
+                setTimeout(function () {
+                    el.classList.add('animated');
+                }, delay);
+                observer.unobserve(el);
             }
         });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+    }, observerOptions);
 
-revealElements.forEach(el => revealObserver.observe(el));
-
-function validateName(val) {
-    if (!val.trim()) return 'Name is required.';
-    if (val.trim().length < 2) return 'Name must be at least 2 characters.';
-    return '';
-}
-
-function validateEmail(val) {
-    if (!val.trim()) return 'Email is required.';
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!pattern.test(val.trim())) return 'Please enter a valid email address.';
-    return '';
-}
-
-function validateMessage(val) {
-    if (!val.trim()) return 'Message is required.';
-    if (val.trim().length < 20) return 'Message must be at least 20 characters.';
-    return '';
-}
-
-function showError(fieldId, msg) {
-    const field = document.getElementById(fieldId);
-    const error = document.getElementById(fieldId + '-error');
-    if (msg) {
-        field.classList.add('error');
-        error.textContent = msg;
-    } else {
-        field.classList.remove('error');
-        error.textContent = '';
-    }
-}
-
-const form = document.getElementById('contact-form');
-const successMsg = document.getElementById('form-success');
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const nameVal = document.getElementById('name').value;
-    const emailVal = document.getElementById('email').value;
-    const msgVal = document.getElementById('message').value;
-
-    const nameErr = validateName(nameVal);
-    const emailErr = validateEmail(emailVal);
-    const msgErr = validateMessage(msgVal);
-
-    showError('name', nameErr);
-    showError('email', emailErr);
-    showError('message', msgErr);
-
-    if (!nameErr && !emailErr && !msgErr) {
-        successMsg.classList.add('visible');
-        form.reset();
-        setTimeout(() => {
-            successMsg.classList.remove('visible');
-        }, 5000);
-    }
-});
-
-['name', 'email', 'message'].forEach(id => {
-    document.getElementById(id).addEventListener('input', function () {
-        if (id === 'name') showError('name', validateName(this.value));
-        if (id === 'email') showError('email', validateEmail(this.value));
-        if (id === 'message') showError('message', validateMessage(this.value));
+    animatedEls.forEach(function (el) {
+        observer.observe(el);
     });
-});
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            var href = this.getAttribute('href');
+            if (href === '#') return;
+            var target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    function validateName(val) {
+        return val.trim().length >= 2;
+    }
+
+    function validateEmail(val) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+    }
+
+    function validateMessage(val) {
+        return val.trim().length >= 10;
+    }
+
+    function setError(inputId, errorId, msg) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        if (input) input.classList.add('error');
+        if (error) error.textContent = msg;
+    }
+
+    function clearError(inputId, errorId) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        if (input) input.classList.remove('error');
+        if (error) error.textContent = '';
+    }
+
+    if (contactForm) {
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var messageInput = document.getElementById('message');
+
+        if (nameInput) {
+            nameInput.addEventListener('input', function () {
+                if (validateName(this.value)) clearError('name', 'nameError');
+            });
+        }
+
+        if (emailInput) {
+            emailInput.addEventListener('input', function () {
+                if (validateEmail(this.value)) clearError('email', 'emailError');
+            });
+        }
+
+        if (messageInput) {
+            messageInput.addEventListener('input', function () {
+                if (validateMessage(this.value)) clearError('message', 'messageError');
+            });
+        }
+
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            var nameVal = document.getElementById('name').value;
+            var emailVal = document.getElementById('email').value;
+            var messageVal = document.getElementById('message').value;
+
+            var valid = true;
+
+            clearError('name', 'nameError');
+            clearError('email', 'emailError');
+            clearError('message', 'messageError');
+
+            if (!validateName(nameVal)) {
+                setError('name', 'nameError', 'Please enter your name (at least 2 characters).');
+                valid = false;
+            }
+
+            if (!validateEmail(emailVal)) {
+                setError('email', 'emailError', 'Please enter a valid email address.');
+                valid = false;
+            }
+
+            if (!validateMessage(messageVal)) {
+                setError('message', 'messageError', 'Please enter a message (at least 10 characters).');
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            var submitBtn = document.getElementById('submitBtn');
+            var btnText = submitBtn.querySelector('.btn-text');
+            var btnLoading = submitBtn.querySelector('.btn-loading');
+            var formSuccess = document.getElementById('formSuccess');
+
+            submitBtn.disabled = true;
+            if (btnText) btnText.style.display = 'none';
+            if (btnLoading) btnLoading.style.display = 'flex';
+
+            try {
+                var formData = new FormData(contactForm);
+                var response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                var data = await response.json();
+
+                if (data.success) {
+                    contactForm.reset();
+                    submitBtn.style.display = 'none';
+                    if (formSuccess) {
+                        formSuccess.style.display = 'flex';
+                    }
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                if (btnText) btnText.style.display = '';
+                if (btnLoading) btnLoading.style.display = 'none';
+                setError('message', 'messageError', 'Something went wrong. Please try again or email directly.');
+            }
+        });
+    }
+
+    var projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+            var y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+            card.querySelector('.project-card-inner').style.transform =
+                'translateY(-6px) rotateX(' + (-y) + 'deg) rotateY(' + x + 'deg)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            card.querySelector('.project-card-inner').style.transform = '';
+        });
+    });
+
+    var skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 40) + 'ms';
+    });
+})();
